@@ -7,8 +7,8 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 
 # ====================== AYARLAR ======================
-TELEGRAM_TOKEN = os.getenv("TOKEN") or "8697300838:AAH7H4d2SGo5FihxMgIAbQ0W-nr160BkgT8"
-ADMIN_ID = 8064250098
+TELEGRAM_TOKEN = os.getenv("TOKEN") or "8797623645:AAEveoDQgAdqqHZmLVOmqzG8B80RSGCmpuM"
+ADMIN_IDS = [8773299135, 8230461239, 8973632679]
 
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher()
@@ -66,7 +66,7 @@ async def get_link(callback: types.CallbackQuery):
 # ====================== ADMIN PANEL =================
 @dp.message(Command("admin"))
 async def admin_panel(message: types.Message):
-    if message.from_user.id != ADMIN_ID:
+    if message.from_user.id != ADMIN_IDS:
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="⭐ VIP Yap", callback_data="admin_vip")],
